@@ -1,4 +1,5 @@
 package org.avslor.JourneyThroughAvslor.Engine.Shared.Events;
+import org.avslor.JourneyThroughAvslor.Engine.Shared.Map.Map;
 import org.avslor.JourneyThroughAvslor.Engine.Shared.Map.MapReader;
 import java.util.concurrent.ConcurrentHashMap;
 /*   Copyright 2013 James Loyd , Joshua Theze
@@ -18,21 +19,39 @@ import java.util.concurrent.ConcurrentHashMap;
 public class EventHandler implements iEventHandler
 {
     ConcurrentHashMap eventHashMap = new ConcurrentHashMap();
+    private Map EventMap = null;
+    private Event event = null;
+    private EventHandler(Event event)
+    {
+        this.event = event;
+    }
 
+    public static EventHandler createEventHandler(Event event)
+    {
+        return new EventHandler(event);
+    }
     public void setEventHashMap(ConcurrentHashMap eventHashMap)
     {
         this.eventHashMap = eventHashMap;
-    }
-
-    @Override
-    public int hashCode()
-    {
-        return super.hashCode();
+        event.toString();
+        EventMap.toString();
     }
 
     @Override
     public void callMap(MapReader mapReader)
     {
-
+        EventMap = mapReader.returnMap();
     }
+
+    @Override
+    public boolean checkEvent()
+    {
+        return false;
+    }
+    public String toString()
+    {
+        return "This is an event handler with current input coordinates (x and y to be added here)" ;
+    }
+
+
 }
