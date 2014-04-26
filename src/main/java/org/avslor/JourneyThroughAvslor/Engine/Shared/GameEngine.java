@@ -1,4 +1,5 @@
 package org.avslor.JourneyThroughAvslor.Engine.Shared;
+
 /*   Copyright 2013 James Loyd , Joshua Theze
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -9,21 +10,34 @@ package org.avslor.JourneyThroughAvslor.Engine.Shared;
  *
  *   Unless required by applicable law or agreed to in writing, software
  *   distributed under the License is distributed on an "AS IS" BASIS,
- *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   WITHOUT WARRANTIYES OR CONDITIONS OF ANY KIND, either express or implied.
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-
-import org.avslor.JourneyThroughAvslor.Engine.Shared.Events.Event;
-import org.avslor.JourneyThroughAvslor.Engine.Shared.Events.EventHandler;
-
-public class GameEngine implements Runnable
+public class GameEngine implements iGameState
 {
-    public void run()
-    {
-        System.out.println("Let's Get this thread going");
-        Event event = new Event("event");
-        EventHandler eventHandler = EventHandler.createEventHandler(event);
-        eventHandler.toString();
-    }
+	private boolean isRunning = false;
+        private String mapName;
+	private String charachterName;
+	private String sectionName;
+	public GameEngine(String mapName, String charachterName , String sectionName)
+    	{
+        	this.mapName = mapName;
+		this.charachterName = charachterName;
+		this.sectionName = sectionName;
+    	}
+
+   	public void Start()
+   	{
+       		isRunning = true;
+	   	while(isRunning)
+	   	{
+			int i = 3;
+			Storyreader storyreader = Storyreader.createStoryReader();
+			System.out.println(storyreader.ReadStory());
+			System.out.println(storyreader.ReadStoryAtLine(sectionName,i));
+			isRunning = false;
+	    	}
+    	}
+
 }

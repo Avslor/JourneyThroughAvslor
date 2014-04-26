@@ -1,4 +1,5 @@
 package org.avslor.JourneyThroughAvslor.Engine.Shared;
+import jdk.nashorn.api.scripting.JSObject;
 import org.json.JSONObject;
 
 /*   Copyright 2013 James Loyd , Joshua Theze
@@ -36,5 +37,13 @@ public class Utility
         return new JSONObject();
     }
 
+    public static JSONObject readStoryAssets()
+    {
+        return new JSONObject();
+    }
 
+    public static void handleIT(Exception e)
+    {
+        System.out.println("An Exception has ocurred at "+ e.toString() + " please do something about this");
+    }
 }
