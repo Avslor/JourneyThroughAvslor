@@ -2,11 +2,6 @@ package org.avslor.JourneyThroughAvslor.Engine.Shared.Utility;
 import org.json.JSONObject;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.DirectoryStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 /*   Copyright 2013 James Loyd , Joshua Theze
  *
@@ -164,16 +159,13 @@ public class Utility
                    }
                }
                number = Integer.parseInt(file.toString().substring(location,extension));
-               if(max == number)
-               {
-                   max = number;
-               }
+               number++;
                if(number > max)
                {
                    max = number;
                }
            }
-           return ++max;
+        return max;
        }
        catch(Exception e)
        {
