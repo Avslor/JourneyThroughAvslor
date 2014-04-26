@@ -4,6 +4,11 @@
 *.jar
 *.war
 *.ear
+*.mf
+gradle/
+gradlew
+gradlew.bat
+Bugs/
 
 # Intellij
 .idea/

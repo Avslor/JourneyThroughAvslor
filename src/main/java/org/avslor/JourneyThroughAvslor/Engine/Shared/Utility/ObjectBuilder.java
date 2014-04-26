@@ -1,4 +1,7 @@
-package org.avslor.JourneyThroughAvslor.Engine.Shared;
+package org.avslor.JourneyThroughAvslor.Engine.Shared.Utility;
+
+import org.avslor.JourneyThroughAvslor.Engine.Shared.iGameState;
+
 /*   Copyright 2013 James Loyd , Joshua Theze
  *
  *   Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +16,14 @@ package org.avslor.JourneyThroughAvslor.Engine.Shared;
  *   See the License for the specific language governing permissions and
  *   limitations under the License.
  */
-public class ObjectBuilder
+public class ObjectBuilder implements iGameState
 {
+    //member variables
+
+    //constructors
+    public ObjectBuilder()
+    {
+
+    }
+    //class methods
 }

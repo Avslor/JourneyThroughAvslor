@@ -1,7 +1,9 @@
-package org.avslor.JourneyThroughAvslor.Engine.Shared;
+package org.avslor.JourneyThroughAvslor.Engine.Shared.Utility;
 
+import org.avslor.JourneyThroughAvslor.Engine.Shared.iGameState;
 import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /*   Copyright 2013 James Loyd , Joshua Theze
@@ -88,7 +90,7 @@ public class Storyreader implements iGameState
     /*
      * This will be utilized later on.
      */
-    public String ReadStoryAtLine(String sectionName, int lineNumber)
+    public String ReadStoryAtLine(String sectionName, int lineNumber) throws Exception
     {
         try{
             String storyAtLineNumber;
@@ -99,15 +101,7 @@ public class Storyreader implements iGameState
         }
         catch(IndexOutOfBoundsException e)
         {
-            Utility.handleIT(e);
+            return Utility.handleIT(e);
         }
-        finally
-        {
-            StringBuffer buffer = new StringBuffer();
-            buffer.append("Even though an error has happened. We will start over from the last valid save. \n");
-            buffer.append("In the case of this not being applicable. The game will start over. \n");
-            return buffer.toString();
-        }
-
     }
 }

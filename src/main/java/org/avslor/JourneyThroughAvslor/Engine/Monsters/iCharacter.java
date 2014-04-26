@@ -20,5 +20,12 @@ package org.avslor.JourneyThroughAvslor.Engine.Monsters;
  */
 public interface iCharacter
 {
-
+    //What every character should have
+    String getName();
+    String getRace();
+    String getAlignment();
+    String getClassName();
+    String getHealthPoints();
+    String getMagicPoints();
+    int getLevel();
 }
